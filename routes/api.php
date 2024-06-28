@@ -27,3 +27,13 @@ Route::put('/user/update-latlong', [App\Http\Controllers\Api\AuthController::cla
 
 //get all restaurant
 Route::get('/restaurant', [App\Http\Controllers\Api\AuthController::class, 'getRestaurant']);
+
+//get all driver
+Route::get('/driver', [App\Http\Controllers\Api\AuthController::class, 'getDriver']);
+
+//get all product
+Route::apiResource('/products', App\Http\Controllers\Api\ProductController::class)->middleware('auth:sanctum');
+
+//get all order
+Route::get('/order', [App\Http\Controllers\Api\AuthController::class, 'getOrder']);
+

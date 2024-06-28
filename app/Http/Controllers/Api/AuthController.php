@@ -171,4 +171,16 @@ class AuthController extends Controller
         ]);
     }
 
+    //get all driver
+    public function getDriver()
+    {
+        $driver = User::where('roles', 'driver')->get();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Get all driver',
+            'data' => $driver
+        ]);
+    }
+
 }
